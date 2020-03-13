@@ -1,24 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import FileDropAndUpload from './FileDropAndUpload';
 
 function App() {
+  let userId = 'id0001';
+  let fileUploadInfo = {
+    fileUploadUrl: `http://localhost:8080/api/v1/${userId}/upload`, 
+    description: 'Drag n Drop File here',
+    elseDescription: 'Drag n Drop File. And Click here.',
+    background: '#deeffc',
+    textcolor: '#000'
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FileDropAndUpload {...fileUploadInfo}/>
     </div>
   );
 }
